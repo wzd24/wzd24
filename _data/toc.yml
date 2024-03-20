@@ -1,0 +1,25 @@
+- title: 基础知识
+  url: /develop/fundamentals/
+  collection: fundamentals
+  links:
+    - title: "框架及中间件"
+      url: "/develop/fundamentals/framework"
+    - title: "项目列表"
+      url: "/develop/fundamentals/projects"
+    - title: "接口处理程序"
+      url: "/develop/fundamentals/handler"
+    - title: "Grain基类"
+      url: "/develop/fundamentals/grainbase"
+    - title: "选项"
+      url: "/develop/fundamentals/options"
+    - title: "授权"
+      url: "/develop/fundamentals/authorization"
+    - title: "审计"
+      url: "/develop/fundamentals/auditing"
+- title: 教程
+  url: /develop/tutorials/example-page
+  collection: tutorials
+  links:
+    - title: "Getting Started"
+      url: "/develop/tutorials/example-page"
+    
