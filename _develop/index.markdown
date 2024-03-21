@@ -1,6 +1,5 @@
 ---
-layout: page
-title: Scorpio - Documentation
+title: 服务端开发指南
 ---
 # 服务端开发指南
 

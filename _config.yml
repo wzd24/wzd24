@@ -61,19 +61,26 @@ collections:
   develop:
     output: true
     permalink: /:collection/:path
-  fundamentals:
+  deploy:
     output: true
-    permalink: /develop/:collection/:path
-
+    permalink: /:collection/:path
     # Defaults
 defaults:
   - scope:
       path: "_develop"
       type: "develop"
     values:
-      layout: page
+      layout: develop
   - scope:
-      path: "_fundamentals"
-      type: "fundamentals"
+      path: "_deploy"
+      type: "deploy"
     values:
-      layout: page
+      layout: deploy
+  - scope:
+      path: "_develop/fundamentals"
+    values:
+      category: "fundamentals"
+  - scope:
+      path: "_develop/environment"
+    values:
+      category: "environment"

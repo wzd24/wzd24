@@ -1,0 +1,7 @@
+{
+    "yaml.schemas": {
+        "file:///c%3A/Users/zidan/.vscode/extensions/docsmsft.docs-yaml-1.0.1/dist/toc.schema.json": "/toc\\.yml/i",
+        "https://gitlab.com/appsemble/appsemble/-/raw/HEAD/packages/cli/assets/appsemblerc.schema.json": "file:///d%3A/source/repos/SSDT/Docs/_data/navigation.yml",
+        "https://raw.githubusercontent.com/apache/camel/main/dsl/camel-yaml-dsl/camel-yaml-dsl/src/generated/resources/schema/camelYamlDsl.json": "file:///d%3A/source/repos/SSDT/Docs/_data/deploy.yml"
+    }
+}
