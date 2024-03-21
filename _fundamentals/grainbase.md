@@ -59,8 +59,28 @@ public interface IGrainBase : IGrain
 
    public class Avatar : GrainBase<Avatar>, IAvatar
    {
-       public Avatar(IServiceProvider serviceProvider) : base(serviceProvider)
+        private readonly IPersistentState<AvatarVIPState> _vipState;
+
+        /// <summary>
+        /// 属性化 State，在对象初始化时会自动初始化
+        /// </summary>
+        [PropertyPersistentState("AvatarState", "AvatarStateStorage")]
+        public IPersistentState<AvatarState> AvatarState { get; set; }
+
+        /// <summary>
+        /// 子系统，在对象初始化时会自动初始化
+        /// </summary>
+
+        [SubSystem]
+        public AvatarHeros Heros { get; set; }
+
+
+       public Avatar(IServiceProvider serviceProvider,
+            [PersistentState("AvatarVIPState", SystemStorages.RelationalSingleStorage)] 
+            IPersistentState<AvatarVIPState> vipState,
+        ) : base(serviceProvider)
        {
+            _vipState = vipState;
        }
 
        public ValueTask Login(string username, string password) => throw new NotImplementedException();
