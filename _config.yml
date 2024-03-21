@@ -84,3 +84,7 @@ defaults:
       path: "_develop/environment"
     values:
       category: "environment"
+  - scope:
+      path: "_deploy/environment"
+    values:
+      category: "environment"

@@ -1,6 +1,6 @@
   <nav class="collapse bd-links" id="bd-docs-nav">
     {% for section in site.data.deploy %}
-      <div class="bd-toc-item {% if section.collection==page.collection %}active{% else %}{% endif %}">
+      <div class="bd-toc-item {% if section.category==page.category %}active{% else %}{% endif %}">
           <a class="bd-toc-link" href="{% if section.url %}{{ site.baseurl }}{{ section.url }}{% else %}{{ section.external_url }}{% endif %}">
             {{ section.title }}
           </a>

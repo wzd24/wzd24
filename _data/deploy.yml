@@ -1,6 +1,14 @@
+- title: 环境部署
+  url: /deploy/environment
+  category: environment
+  links:
+    - title: "系统需求"
+      url: "/deploy/environment/requirement"
+    - title: "部署数据库"
+      url: "/deploy/environment/database"
 - title: Ubuntu 环境部署
   url: /deploy/fundamentals/
-  collection: fundamentals
+  category: fundamentals
   links:
     - title: "框架及中间件"
       url: "/develop/fundamentals/framework"
@@ -18,7 +26,7 @@
       url: "/develop/fundamentals/auditing"
 - title: 教程
   url: /develop/tutorials/example-page
-  collection: tutorials
+  category: tutorials
   links:
     - title: "Getting Started"
       url: "/develop/tutorials/example-page"

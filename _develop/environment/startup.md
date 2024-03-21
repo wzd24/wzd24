@@ -13,7 +13,7 @@ title: 启动项目
 
 打开 tang 解决方案的 Sailina.Tang.Game.Host 项目下的appsettings.json文件，将其中的数据库链接、redis链接及RabbitMQ链接修改为您的服务器地址：
 
-![配置图片](/assets/img/20240205104541.png){: .img-thumbnail }
+![配置图片]({{site.baseurl}}/assets/img/20240205104541.png){: .img-thumbnail }
 
 
 ## 启服步骤
