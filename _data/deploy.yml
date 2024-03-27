@@ -7,27 +7,12 @@
     - title: "部署数据库"
       url: "/deploy/environment/database"
 - title: Ubuntu 环境部署
-  url: /deploy/fundamentals/
-  category: fundamentals
+  url: /deploy/ubuntu/
+  category: ubuntu
   links:
-    - title: "框架及中间件"
-      url: "/develop/fundamentals/framework"
-    - title: "项目列表"
-      url: "/develop/fundamentals/projects"
-    - title: "接口处理程序"
-      url: "/develop/fundamentals/handler"
-    - title: "Grain基类"
-      url: "/develop/fundamentals/grainbase"
-    - title: "选项"
-      url: "/develop/fundamentals/options"
-    - title: "授权"
-      url: "/develop/fundamentals/authorization"
-    - title: "审计"
-      url: "/develop/fundamentals/auditing"
-- title: 教程
-  url: /develop/tutorials/example-page
-  category: tutorials
-  links:
-    - title: "Getting Started"
-      url: "/develop/tutorials/example-page"
-    
+    - title: "登录服部署"
+      url: "/deploy/ubuntu/login-server"
+    - title: "游戏服部署"
+      url: "/deploy/ubuntu/game-server"
+    - title: "持久化服部署"
+      url: "/deploy/ubuntu/storage-server"

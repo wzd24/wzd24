@@ -87,4 +87,8 @@ defaults:
   - scope:
       path: "_deploy/environment"
     values:
-      category: "environment"
+      category: "environment" 
+  - scope:
+      path: "_deploy/ubuntu"
+    values:
+      category: "ubuntu"
