@@ -199,3 +199,63 @@ INSERT INTO BadWordsSetting (`ShieldWord`,`Id`) VALUES ('中特',23771);
 
 ![alt text](/assets/img/image14.png){: .img-thumbnail }
 
+## 使用配置
+
+本项目实现了一个完整的框架用于注入，读取，同步游戏配置数据。以下为框架的核心类及使用方式。
+
+### `IGameSettingDefinitionProvider`
+
+`IGameSettingDefinitionProvider` 接口用于注入配置，配置实体需要注入到框架后方可被配置框架识别并管理。通过实现 `IGameSettingDefinitionProvider` 接口并在接口方法中将配置注入到框架中，参见如下:
+
+``` cs
+ public class GameSettingDefinitionProvider : IGameSettingDefinitionProvider
+ {
+     public void Define(IGameSettingDefinitionContext context)
+     {
+         context.AddGlobalGeneral<AttributeSetting>("attribute");
+         context.AddGlobalGeneral<NewFunctionOnSetting>("newFunctionOn");
+         context.AddGlobalGeneral<GuideSetting>("guide");
+         context.AddGlobalGeneral<EventPlotSetting>("eventPlot");
+         context.AddGlobalGeneral<NPCSetting>("npc");
+         context.AddGlobalGeneral<GameConfigSetting>("gameConfig", settingCatalog: SettingCatalog.Host);
+         context.AddGlobalGeneral<MapTemplateSetting>("mapTemplate", false);
+     }
+ }
+
+ //AddGlobalGeneral 方法定义：
+ public static IGameSettingDefinitionContext AddGlobalGeneral<TValue>(
+    this IGameSettingDefinitionContext context,
+    string shortName, //配置短名称，用于和客户端同步配置时作为配置标识键。
+    bool syncToClient = true, //配置是否同步到客户端，默认为：true。
+    SettingCatalog settingCatalog = SettingCatalog.App, //配置同步时机，Host为客户端启动时同步，App为玩家登录后同步，Full为两个阶段都同步。
+    IEnumerable<TValue> defaultValue = null//配置默认数据，当数据库中对应的数据表不存在或表为空时，配置框架会返回这个默认值。
+    ) where TValue : GameSettingBase
+{
+
+}
+```
+> 注：框架会自动发现并注入所有实现了 `IGameSettingDefinitionProvider` 的类。
+
+### `IGameSettingManager`
+
+`IGameSettingManager` 接口用于读取配置数据，通过在需要读取数据的类中注入 `IGameSettingManager` 接口，便可通过接口的 `GetGlobalGameSettingAsync` 方法获取配置的值。
+如：
+
+``` cs
+
+public class Avatar
+{
+    private readonly IGameSettingManager _gameSettingManager;
+
+    public Avatar(IGameSettingManager gameSettingManager){
+        _gameSettingManager = gameSettingManager;
+    }
+
+    public void Example(){
+        var flagSettings = (await _gameSettingManager.GetAllAsync<GuildFlagSetting>());//读取 GuildFlagSetting 配置的所有数据。
+        var flagSetting = (await _gameSettingManager.GetAsync<GuildFlagSetting>(12));//读取 GuildFlagSetting 配置ID 为 12 的数据。
+    }
+}
+```
+
+> 关于框架的实现方案，感兴趣的同学可以查看相应的实现代码，本文档不展开来讲。
