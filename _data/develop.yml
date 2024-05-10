@@ -23,8 +23,8 @@
       url: "/develop/fundamentals/grainbase"
     - title: "子系统"
       url: "/develop/fundamentals/subsystem"
-    - title: "授权"
-      url: "/develop/fundamentals/authorization"
+    - title: "游戏设置"
+      url: "/develop/fundamentals/settings"
     - title: "审计"
       url: "/develop/fundamentals/auditing"
 - title: 教程
